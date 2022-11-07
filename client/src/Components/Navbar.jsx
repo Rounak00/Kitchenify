@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import { BsSearch } from "react-icons/bs";
+import { BsFillCartFill} from "react-icons/bs";
 
 
 
@@ -27,6 +27,13 @@ const NavHeaderContent=styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 9px 0;
+`
+const Profilediv=styled.div``
+const Carticon=styled(Link)`
+  margin-right: 20px;
+  color:#f8aa19;
+  cursor: pointer;
+  
 `
 const Slogan=styled.p`
   
@@ -96,6 +103,7 @@ const NavMenu=styled.div`
   align-items: center;
 `
 
+
 const Navbar = () => {
   return (
     <>
@@ -103,7 +111,8 @@ const Navbar = () => {
         <NavHeaderContent>
            <Slogan>Free Shipping, order now</Slogan>
            <Searchbar placeholder="Search here..." />
-           <Profile to="/login">Log In</Profile>
+           <Profilediv><Carticon to="/cart"><BsFillCartFill/></Carticon><Profile to="/login">Log In</Profile></Profilediv>
+           
         </NavHeaderContent>  
         <SeperateLine/>
         <NavFooter>
@@ -116,10 +125,10 @@ const Navbar = () => {
                  <NavFooterContent>Products</NavFooterContent>
               </NavElement>
               <NavElement>
-                 <NavFooterContent>Blogs</NavFooterContent>
+                 <NavFooterContent to="/news">News</NavFooterContent>
               </NavElement>
               <NavElement>
-                 <NavFooterContent>About</NavFooterContent>
+                 <NavFooterContent to="/about">About</NavFooterContent>
               </NavElement>
            </NavMenu>
         </NavFooter>

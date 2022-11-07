@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import {Link} from 'react-router-dom'
+
 
 const BodyContainer=styled.div`
     width: 100%;
@@ -59,17 +59,19 @@ const RegisterLink=styled(Link)`
 `
 
 const Login = () => {
+   
+
   return (
     <>
    <BodyContainer> 
     <LoginForm action="">
        <LoginHeading>Enter your email and password </LoginHeading> 
        <InputBoxes>
-          <InputBox type="text" name="email" placeholder='Enter your Email...'>
+          <InputBox type="email" name="email" placeholder='Enter your Email...'>
           </InputBox>
        </InputBoxes>
        <InputBoxes>
-          <InputBox type="text" name="password" placeholder='Enter your Password...'>
+          <InputBox  type="text" name="password" placeholder='Enter your Password...'>
           </InputBox>
        </InputBoxes>
        <InputBoxes>
