@@ -119,10 +119,10 @@ const Navbar = () => {
            <NavLogo to="/"><img src="/assets/logo.png" alt="Kitchenify" height="55px" width="70px"/></NavLogo>
            <NavMenu>
               <NavElement>
-                 <NavFooterContent>Home</NavFooterContent>
+                 <NavFooterContent to="/">Home</NavFooterContent>
               </NavElement>
               <NavElement>
-                 <NavFooterContent>Products</NavFooterContent>
+                 <NavFooterContent to="/product">Products</NavFooterContent>
               </NavElement>
               <NavElement>
                  <NavFooterContent to="/news">News</NavFooterContent>
