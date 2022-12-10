@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import styled from "styled-components"
 import { CartContext } from '../context/Context'
-
+import { Link } from 'react-router-dom'
 
 
 const Content=styled.div`
@@ -80,7 +80,16 @@ const Cards = (props) => {
     <>
         
         <Content>
-          <Poster src={`http://localhost:8000/${props.image}`}/>
+          <Link to="/single_product" 
+          id={props._id}
+          image={props.image}
+          price={props.price}
+          name={props.name}
+          discount={props.discount}
+          companyName={props.companyName}
+          type={props.type}
+          >
+          <Poster src={props.image}/></Link>
           <Name>{props.name}</Name>
           <CompanyName>Company : {props.companyName}</CompanyName>
           <Price>Price : {props.price}</Price>

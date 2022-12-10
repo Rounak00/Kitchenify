@@ -3,6 +3,7 @@ import axios from "axios"
 import { ProductData } from '../constant/ProductData'
 import Cards from '../Components/Cards'
 import styled from 'styled-components'
+import Type from '../Components/Type'
 
 const Container=styled.div`
   display: flex;
@@ -33,6 +34,7 @@ const ProductPage = () => {
   console.log(data)
   return (
     <>
+    <Type></Type>
     <Container> 
       {ProductData.map((item,index)=>(
         <Cards

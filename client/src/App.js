@@ -11,6 +11,7 @@ import ErrorPage from "./pages/Error"
 import AboutPage from './pages/AboutPage'
 import CartPage from './pages/CartPage'
 import ProductPage from './pages/ProductPage'
+import SingleProductPage from './pages/SingleProductPage'
 import './App.css'
 
 function App() {
@@ -24,6 +25,11 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/product" element={<ProductPage />} />
+             <Route path="/product/tools" element={<ProductPage />} />
+             <Route path="/product/electronics" element={<ProductPage />} />
+             <Route path="/product/appliances" element={<ProductPage />} />
+             <Route path="/product/ovens" element={<ProductPage />} />
+          <Route path="/single_product" element={<SingleProductPage />} />  
         <Route path="/news" element={<NewsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/cart" element={<CartPage />} />

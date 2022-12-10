@@ -118,7 +118,43 @@ async getProduct(req,res,next){
   }catch(err){
     next(err);
   }
-}
+},
+async getProducts_tools(req,res,next){
+  
+  try{
+    const result=await ProductSchema.find({type:"tool"})
+    res.status(200).json(result);
+  }catch(err){
+    next(err);
+  }
+},
+async getProducts_appliances(req,res,next){
+  
+  try{
+    const result=await ProductSchema.find({type:"appliance"})
+    res.status(200).json(result);
+  }catch(err){
+    next(err);
+  }
+},
+async getProducts_electronics(req,res,next){
+  
+  try{
+    const result=await ProductSchema.find({type:"electronic"})
+    res.status(200).json(result);
+  }catch(err){
+    next(err);
+  }
+},
+async getProducts_ovens(req,res,next){
+  
+  try{
+    const result=await ProductSchema.find({type:"oven"})
+    res.status(200).json(result);
+  }catch(err){
+    next(err);
+  }
+},
 };
           
 

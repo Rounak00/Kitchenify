@@ -23,6 +23,10 @@ routes.put("/product/:id",verifyAdmin,productController.updateProduct) //update
 routes.get("/product",productController.getProducts)
 routes.get("/product/category/:name",productController.getProducts)
 routes.get("/product/:id",productController.getProduct)
+routes.get("/product/tools",productController.getProducts_tools)
+routes.get("/product/appliances",productController.getProducts_appliances)
+routes.get("/product/electronics",productController.getProducts_electronics)
+routes.get("/product/ovens",productController.getProducts_ovens)
 
 
 
