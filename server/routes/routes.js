@@ -21,6 +21,7 @@ routes.post("/product",verifyAdmin,productController.addProduct) //add
 routes.delete("/product/:id",verifyAdmin,productController.delProduct) //delete    
 routes.put("/product/:id",verifyAdmin,productController.updateProduct) //update 
 routes.get("/product",productController.getProducts)
+routes.get("/product/category/:name",productController.getProducts)
 routes.get("/product/:id",productController.getProduct)
 
 

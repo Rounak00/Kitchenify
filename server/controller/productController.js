@@ -24,6 +24,7 @@ const handleMultipartData = multer({
 }).single("image");
 
 const productController={
+  
     async addProduct(req,res,next){
       handleMultipartData(req, res, async(err) => {
         if(err){
@@ -101,7 +102,7 @@ const productController={
     });
 },
 async getProducts(req,res,next){
-  console.log(req.user.id)
+  
   try{
     const result=await ProductSchema.find()
     res.status(200).json(result);

@@ -9,7 +9,7 @@ const registerController={
              //hashing
         const saltNum = bcrypt.genSaltSync(10);
         const hashPassword = bcrypt.hashSync(req.body.password, saltNum)
-         console.log(req.body);
+         
         const newUser= new UserSchema({
             name:name,
             email:email,

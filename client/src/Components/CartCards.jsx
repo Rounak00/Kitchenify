@@ -80,14 +80,15 @@ const Cards = (props) => {
     <>
         
         <Content>
-          <Poster src={`http://localhost:8000/${props.image}`}/>
+          <Poster src={props.image}/>
           <Name>{props.name}</Name>
           <CompanyName>Company : {props.companyName}</CompanyName>
           <Price>Price : {props.price}</Price>
           <Aprice>Discounted Price for You : <span style={{color:"#F5AB1E"}}>{props.discount}</span></Aprice>
           {cart.includes(props) ? 
-            <Button onClick={(e)=>removeCart(e,props)}>Remove Product</Button> : 
-            <Button onClick={(e)=>addCart(e,props)}>Add Product</Button> }
+            
+            <Button onClick={(e)=>addCart(e,props)}>Add Product</Button>:
+            <Button onClick={(e)=>removeCart(e,props)}>Remove Product</Button> }
         </Content>
      
     </>

@@ -27,7 +27,8 @@ const loginController={
 
             const {password,isAdmin,__v, ...other} = isExist._doc
 
-            res.cookie("access_token",generateToken, { httpOnly: true}).status(201).json(other);
+            // res.cookie("access_token",generateToken, { httpOnly: true}).status(201).json(other);
+			res.status(201).json({access_token:generateToken});
         }catch(err){
             next(err);
         }

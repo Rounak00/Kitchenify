@@ -12,7 +12,9 @@ const app=express();
 app.use(cors())
 app.use(express.json());
 
+app.use('/uploads', express.static('uploads'));
 global.appRoot = path.resolve(__dirname);
+
 app.use(bodyParser.urlencoded({ extended: false })); // come in base 64 which is not supported by rest
 
 app.use(cookieParser());

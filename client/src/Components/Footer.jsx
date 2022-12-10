@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link}  from "react-router-dom"
 import { GoMail, GoLocation } from "react-icons/go";
 import {
   BsFillPhoneVibrateFill,
@@ -15,9 +16,10 @@ const Foot = styled.div`
   width: 100%;
   height: 10rem;
   background-color: #f2f3ee;
+  padding: 10px 0;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
 `;
 const FooterLogo = styled.div`
   height: 30px;
@@ -28,12 +30,13 @@ const FooterLogo = styled.div`
 const AddressSection = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-around;
 `;
 const FooterHeadings = styled.p`
   color: #f5ad24;
-  padding: 1rem;
+  padding: 1rem ;
+  
 `;
 const FooterSpanContents = styled.span`
   font-size: 1rem;
@@ -41,6 +44,17 @@ const FooterSpanContents = styled.span`
   font-weight: 400;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+`;
+
+const FooterSpanContentsProducts=styled(Link)`
+      font-size: 1rem;
+      padding: 0.1rem 1rem;
+      font-weight: 400;
+      text-decoration: none;
+      color: black;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      &:hover{color:#f5ad24;}  
 `;
 const CategoriesSection = styled.div`
   display: flex;
@@ -88,7 +102,7 @@ const Footer = () => {
       
         <Foot>
           <FooterLogo>
-            <img src="/assets/logo.png" alt="Logo" height="80px" width="80px" />
+            <img src="/assets/logo.png" alt="Logo" height="120px" width="100px" />
           </FooterLogo>
           <AddressSection>
             <FooterHeadings>Contacts</FooterHeadings>
@@ -109,10 +123,10 @@ const Footer = () => {
           </AddressSection>
           <CategoriesSection>
             <FooterHeadings>Categories</FooterHeadings>
-            <FooterSpanContents>Appliances</FooterSpanContents>
-            <FooterSpanContents>Electronics</FooterSpanContents>
-            <FooterSpanContents>Ovens</FooterSpanContents>
-            <FooterSpanContents>Cooking Tools</FooterSpanContents>
+            <FooterSpanContentsProducts to="/product">Appliances</FooterSpanContentsProducts>
+            <FooterSpanContentsProducts to="/product">Electronics</FooterSpanContentsProducts>
+            <FooterSpanContentsProducts to="/product">Ovens</FooterSpanContentsProducts>
+            <FooterSpanContentsProducts to="/product">Cooking Tools</FooterSpanContentsProducts>
           </CategoriesSection>
           <Socials>
             <FooterHeadings>Join US</FooterHeadings>
