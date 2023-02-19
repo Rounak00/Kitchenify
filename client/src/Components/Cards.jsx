@@ -80,15 +80,7 @@ const Cards = (props) => {
     <>
         
         <Content>
-          <Link to="/single_product" 
-          id={props._id}
-          image={props.image}
-          price={props.price}
-          name={props.name}
-          discount={props.discount}
-          companyName={props.companyName}
-          type={props.type}
-          >
+          <Link to={`/single_product/${props.id}`} >
           <Poster src={props.image}/></Link>
           <Name>{props.name}</Name>
           <CompanyName>Company : {props.companyName}</CompanyName>

@@ -1,5 +1,74 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from "styled-components"
+import axios from 'axios'
+
+const Register = () => {
+    const [state,setState]=useState({
+        name:"",
+        email:"",
+        password:"",
+        address:""
+    })
+    const [rec,setRec]=useState("");
+
+    const handleInput=(e)=>{
+        const name=e.target.name;
+        const val=e.target.value;
+        setState({...state,[name]:val});
+        console.log(state);
+    }
+    const handleSubmit=async(e)=>{
+        e.preventDefault();
+
+        try {
+            const res = await axios.post(`${process.env.REACT_APP_BASEURL}/register`, state);
+            console.log(res);
+        } catch (err) {
+            console.log(err);
+        }
+
+        setState({
+            name:"",
+            email:"",
+            password:"",
+            address:""
+        })
+        
+    }
+  return (
+    <>
+    <BodyContainer>
+    <LoginForm action="" onSubmit={handleSubmit}>
+       <LoginHeading>Register</LoginHeading> 
+       <InputBoxes>
+          <InputBox type="text" name="name" value={state.name} onChange={handleInput} placeholder='Enter your Name...'>
+          </InputBox>
+       </InputBoxes>
+
+       <InputBoxes>
+          <InputBox type="email" name="email" value={state.email} onChange={handleInput} placeholder='Enter your Email...'>
+          </InputBox>
+       </InputBoxes>
+
+       <InputBoxes>
+          <InputBox type="text" name="password" value={state.password} onChange={handleInput} placeholder='Enter your Password...'>
+          </InputBox>
+       </InputBoxes>
+
+       <InputBoxes>
+          <InputBox type="text" name="address" value={state.address} onChange={handleInput} placeholder='Enter your Address...'>
+          </InputBox>
+       </InputBoxes>
+
+       <InputBoxes>
+          <Submitbtn type="submit" >Go</Submitbtn>
+       </InputBoxes>
+    </LoginForm>
+    </BodyContainer>
+    </>
+  )
+}
+
 
 const BodyContainer=styled.div`
     width: 100%;
@@ -43,39 +112,5 @@ const Submitbtn=styled.button`
     }
 `
 
-const Register = () => {
-  return (
-    <>
-    <BodyContainer>
-    <LoginForm action="">
-       <LoginHeading>Register</LoginHeading> 
-       <InputBoxes>
-          <InputBox type="text" name="name" placeholder='Enter your Name...'>
-          </InputBox>
-       </InputBoxes>
-
-       <InputBoxes>
-          <InputBox type="text" name="email" placeholder='Enter your Email...'>
-          </InputBox>
-       </InputBoxes>
-
-       <InputBoxes>
-          <InputBox type="text" name="password" placeholder='Enter your Password...'>
-          </InputBox>
-       </InputBoxes>
-
-       <InputBoxes>
-          <InputBox type="text" name="address" placeholder='Enter your Address...'>
-          </InputBox>
-       </InputBoxes>
-
-       <InputBoxes>
-          <Submitbtn type="submit" >Go</Submitbtn>
-       </InputBoxes>
-    </LoginForm>
-    </BodyContainer>
-    </>
-  )
-}
 
 export default Register

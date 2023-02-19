@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState}from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
@@ -59,19 +59,37 @@ const RegisterLink=styled(Link)`
 `
 
 const Login = () => {
-   
+   const [rec,setRec]=useState([]);
+   const [state,setState]=useState({
+       email:"",
+       password:""
+   })
+  const handleInput=(e)=>{
+    const name=e.target.name;
+    const value=e.target.value;
 
+    setState({...state,[name]:value})
+    console.log(state);
+  } 
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    setState({
+        email:"",
+       password:""
+    })
+  }
   return (
     <>
    <BodyContainer> 
-    <LoginForm action="">
+    <LoginForm action="" onSubmit={handleSubmit}>
        <LoginHeading>Enter your email and password </LoginHeading> 
        <InputBoxes>
-          <InputBox type="email" name="email" placeholder='Enter your Email...'>
+          <InputBox type="email" name="email" id="name" value={state.email} onChange={handleInput} placeholder='Enter your Email...'>
           </InputBox>
        </InputBoxes>
        <InputBoxes>
-          <InputBox  type="text" name="password" placeholder='Enter your Password...'>
+          <InputBox  type="text" name="password" id="password" value={state.password} onChange={handleInput} placeholder='Enter your Password...'>
           </InputBox>
        </InputBoxes>
        <InputBoxes>

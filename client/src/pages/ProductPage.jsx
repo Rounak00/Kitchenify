@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import axios from "axios"
-import { ProductData } from '../constant/ProductData'
+import { ProductData } from '../Components/constant/ProductData'
 import Cards from '../Components/Cards'
 import styled from 'styled-components'
 import Type from '../Components/Type'
@@ -21,7 +21,7 @@ const ProductPage = () => {
 		const fetchData = async () => {
 			
 			try {
-				const res = await axios.get(`/product`);
+				const res = await axios.get(`${process.env.REACT_APP_BASEURL}/product`);
 				setData(res.data);
 			} catch (err) {
 				console.log(err);
@@ -36,11 +36,11 @@ const ProductPage = () => {
     <>
     <Type></Type>
     <Container> 
-      {ProductData.map((item,index)=>(
+      {data.map((item,index)=>(
         <Cards
           key={index}
           id={item._id}
-          image={item.image}
+          image={`${process.env.REACT_APP_BASEURL}/${item.image}`}
           price={item.price}
           name={item.name}
           discount={item.discount}

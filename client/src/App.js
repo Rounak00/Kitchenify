@@ -14,8 +14,9 @@ import ProductPage from './pages/ProductPage'
 import SingleProductPage from './pages/SingleProductPage'
 import './App.css'
 
+
 function App() {
-  
+  //  console.log(process.env.REACT_APP_BASEURL);
   return (
     <>
      <Router>
@@ -29,7 +30,7 @@ function App() {
              <Route path="/product/electronics" element={<ProductPage />} />
              <Route path="/product/appliances" element={<ProductPage />} />
              <Route path="/product/ovens" element={<ProductPage />} />
-          <Route path="/single_product" element={<SingleProductPage />} />  
+          <Route path="/single_product/:id" element={<SingleProductPage />} />  
         <Route path="/news" element={<NewsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/cart" element={<CartPage />} />
@@ -42,3 +43,6 @@ function App() {
 }
 
 export default App;
+
+
+// "proxy": "http://localhost:8000"

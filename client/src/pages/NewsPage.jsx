@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NewsData } from '../constant/NewsData'
+import { NewsData } from '../Components/constant/NewsData'
 import NewsCard from '../Components/NewsCard'
 
 

@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
-import SwiperData from "../../constant/SwiperData";
+import SwiperData from "../constant/SwiperData";
 
 const swiper = () => {
   return (
@@ -18,7 +18,11 @@ const swiper = () => {
     >
      { 
        SwiperData.map((item,index)=>(
-        <SwiperSlide><img src={item.address} alt="Slider" /></SwiperSlide>      
+        <SwiperSlide key={index}>
+          <img 
+          src={item.address}
+          alt="Slider" />
+        </SwiperSlide>      
        ))
      }   
     

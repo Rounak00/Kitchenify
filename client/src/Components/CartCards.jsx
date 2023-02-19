@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import styled from "styled-components"
 import { CartContext } from '../context/Context'
-
+import { Link } from 'react-router-dom'
 
 
 const Content=styled.div`
@@ -76,11 +76,14 @@ const Cards = (props) => {
       e.preventDefault();
       setCart( cart.filter(item=>item.id!==props.id))
     }
+    console.log(cart);
+    console.log(props);
   return (
     <>
         
         <Content>
-          <Poster src={props.image}/>
+        <Link to={`/single_product/${props.id}`} >
+          <Poster src={props.image}/></Link>
           <Name>{props.name}</Name>
           <CompanyName>Company : {props.companyName}</CompanyName>
           <Price>Price : {props.price}</Price>

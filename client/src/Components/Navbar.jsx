@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BsFillCartFill} from "react-icons/bs";
-
+import { useState } from "react";
 
 
 /*
@@ -105,12 +105,19 @@ const NavMenu=styled.div`
 
 
 const Navbar = () => {
+  const [search,setSearch]=useState("");
+
+  const handleKeyDown=(event)=>{
+    if(event.key==='Enter'){
+      console.log(search);
+    }
+  }
   return (
     <>
       <Nav>
         <NavHeaderContent>
            <Slogan>Free Shipping, order now</Slogan>
-           <Searchbar placeholder="Search here..." />
+           <Searchbar placeholder="Search here..." onChange={(e)=>{setSearch(e.target.value)}} onKeyDown={handleKeyDown}/>
            <Profilediv><Carticon to="/cart"><BsFillCartFill/></Carticon><Profile to="/login">Log In</Profile></Profilediv>
            
         </NavHeaderContent>  

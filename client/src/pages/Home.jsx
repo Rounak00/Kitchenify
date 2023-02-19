@@ -1,5 +1,5 @@
 import React from 'react'
-import {ProductData} from "../constant/ProductData"
+import {ProductData} from "../Components/constant/ProductData"
 import Swiper from '../Components/Swiper/Swiper';
 import styled from "styled-components"
 import {Link} from "react-router-dom"

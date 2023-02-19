@@ -11,9 +11,16 @@ const Heading=styled.p`
    font-size: 1.5rem;
    `;
 
+const WarnHeading=styled.p`
+  color:#f5ad24;
+   text-align: center;
+   padding: 1rem 0;
+   font-size: 1.5rem;
+   margin-top: 20vh;
+`
 const Container=styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   height: 100vh;
   justify-content: center;
@@ -27,7 +34,7 @@ const CartPage = () => {
   return (
     <>
     {
-      cart.length===0 ? <Heading>Your Cart is Empty</Heading> :<Heading>Your Cart</Heading>
+      cart.length===0 ? <WarnHeading>Your Cart is Empty</WarnHeading> :<Heading>Your Cart</Heading>
     }
     
     <Container> 
