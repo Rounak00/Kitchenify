@@ -27,7 +27,9 @@ const loginController={
 
             const {password,isAdmin,__v, ...other} = isExist._doc
 
-            // res.cookie("access_token",generateToken, { httpOnly: true}).status(201).json(other);
+            // res.cookie("access_token",generateToken, { httpOnly: true}).status(201).json(other); //store token in cookies
+			//httpOnlu bcz warna https pey sudhu cholbe
+			
 			res.status(201).json({access_token:generateToken});
         }catch(err){
             next(err);

@@ -4,7 +4,6 @@ import {PORT} from "./config/config.js"
 import routes from "./routes/routes.js"
 import errorHandler from "./middleware/errorHandler.js"
 import cookieParser from "cookie-parser"
-
 import path from "path";
 import cors from "cors";
 import bodyParser from "body-parser"
@@ -14,9 +13,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/uploads', express.static('uploads')); //Image,Video agulo static korte hoi nahole front end access korte pare na
-global.appRoot = path.resolve(__dirname);
+global.appRoot = path.resolve(__dirname); //find where is upload   (global space)
 
+/*body parser should be use at first by those routes which it uses */
 app.use(bodyParser.urlencoded({ extended: false })); // come in base 64 which is not supported by rest
+app.use(bodyParser.json());
 
 app.use(cookieParser());
 app.use(routes);
